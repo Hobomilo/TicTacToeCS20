@@ -9,10 +9,10 @@ appHeight = height;
 smallDimension = (appWidth > appHeight) ? appWidth : appHeight;
 
 //pop
-boardX = appWidth - smallDimension/2;
-boardY = smallDimension * 11/31;
-boardW = smallDimension * smallDimension;
-boardH = smallDimension * smallDimension;
+boardX = smallDimension*1/4;
+boardY = smallDimension/4;
+boardW = smallDimension*3/4;
+boardH = smallDimension/2;
 //  
 boardButtonW = smallDimension/3;
 boardButtonH = smallDimension/3;
