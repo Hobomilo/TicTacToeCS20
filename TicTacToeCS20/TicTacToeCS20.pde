@@ -17,12 +17,12 @@ boardH = smallDimension/2;
 boardButtonW = smallDimension/3;
 boardButtonH = smallDimension/3;
 //
-BX1 = smallDimension;
-BX2 = smallDimension + smallDimension * 1/3;
-BX3 = smallDimension + smallDimension * 2/3;
-BY1 = smallDimension;
-BY2 = smallDimension + smallDimension * 1/3;
-BY3 = smallDimension + smallDimension * 2/3;
+BX1 = boardX;
+BX2 = boardX + boardX * 1/3;
+BX3 = boardX + boardX * 2/3;
+BY1 = boardY;
+BY2 = boardY + boardY * 1/3;
+BY3 = boardY + boardY * 1/3;
 //divs
 rect(boardX, boardY, boardW, boardH); //gamespace
 //
