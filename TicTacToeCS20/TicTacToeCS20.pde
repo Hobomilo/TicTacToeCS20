@@ -2,21 +2,52 @@ int appWidth, appHeight, smallDimension;
 float boardX, boardY, boardW, boardH;
 float boardButtonW, boardButtonH;
 float BX1, BX2, BX3, BX4, BY1, BY2, BY3, BY4;
+float topBarX, topBarY, topBarW, topBarH;
+float quitButtonX, quitButtonY, quitButtonW, quitButtonH;
+float bottomBarX, bottomBarY, bottomBarW, bottomBarH;
+float startButtonX, startButtonY, startButtonW, startButtonH;
+float optionPickerX, optionPickerY, optionPickerW, optionPickerH;
 boolean board1 = false, board2 = false, board3 = false, board4 = false, board5 = false, board6 = false, board7 = false, board8 = false, board9 = false;
 void setup() {
   size (600, 400);
+  background (100);
   appWidth = width;
   appHeight = height;
   smallDimension = (appWidth > appHeight) ? appWidth : appHeight;
 
   //pop
-  boardX = width*1/4;
-  boardY = height*1/6;
-  boardW = width*1/2;
-  boardH = width*1/2;
+  boardX = width*1/3;
+  boardY = height*1/3;
+  boardW = width*1/3;
+  boardH = width*1/3;
   //
   boardButtonW = boardW/3;
   boardButtonH = boardW/3;
+  //
+  topBarX = 0;
+  topBarY = 0;
+  topBarW = width;
+  topBarH = height*1/3;
+  //
+  bottomBarX = 0;
+  bottomBarY = height*1/3 + boardW;
+  bottomBarW = width;
+  bottomBarH = height*2/3 - boardW;
+  //
+  startButtonX = width* 1/6;
+  startButtonY = bottomBarY;
+  startButtonW = width*1/4;
+  startButtonH = bottomBarH;
+  //
+  quitButtonX = width*5/6 - width*1/4;
+  quitButtonY = bottomBarY;
+  quitButtonW = width*1/4;
+  quitButtonH = bottomBarH;
+  //
+  optionPickerX = width*1/16;
+  optionPickerY = topBarH * 1/3;
+  optionPickerW = width*1/4;
+  optionPickerH = topBarH*1/3;
   //
   BX1 = boardX;
   BX2 = boardX + boardW * 1/3;
@@ -40,6 +71,16 @@ void setup() {
   rect(BX1, BY3, boardButtonW, boardButtonH);
   rect(BX2, BY3, boardButtonW, boardButtonH);
   rect(BX3, BY3, boardButtonW, boardButtonH);
+  //
+  rect(topBarX, topBarY, topBarW, topBarH);
+  //
+  rect(optionPickerX, optionPickerY, optionPickerW, optionPickerH);
+  //
+  rect(bottomBarX, bottomBarY, bottomBarW, bottomBarH);
+  //
+  rect(startButtonX, startButtonY, startButtonW, startButtonH);
+  //
+  rect(quitButtonX, quitButtonY, quitButtonW, quitButtonH);
 }
 
 void mousePressed () {
@@ -54,5 +95,5 @@ void mousePressed () {
   if (mousePressed && mouseX  > BX1 && mouseX < BX2 && mouseY > BY1 && mouseY < BY2) board7 = true;
   if (mousePressed && mouseX  > BX1 && mouseX < BX2 && mouseY > BY1 && mouseY < BY2) board8 = true;
   if (mousePressed && mouseX  > BX1 && mouseX < BX2 && mouseY > BY1 && mouseY < BY2) board9 = true;
-  // 
+  //
 }
